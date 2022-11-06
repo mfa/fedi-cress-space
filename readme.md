@@ -2,7 +2,7 @@
 
 ## about
 
-Setup and update a <https://gotosocial.org> on <https://fly.io> for <https://fedi.cress.space>.
+Setup and update a [gotosocial.org](https://gotosocial.org) on [fly.io](https://fly.io) for [fedi.cress.space](https://fedi.cress.space).
 
 This setup has no email support, so administration has to happen via shell (see below).
 
@@ -37,7 +37,7 @@ flyctl deploy --local-only --region fra
 ## DNS / SSL
 
 Add `A` and `AAAA` records to your DNS provider.
-And a CNAME for the letsencrypt of <https://fly.io>, see <https://fly.io/apps/fedi-cress-space/certificates>
+And a CNAME for the letsencrypt of [fly.io](https://fly.io), see <https://fly.io/apps/fedi-cress-space/certificates>
 
 
 ## add user(s) to instance
