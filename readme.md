@@ -2,10 +2,9 @@
 
 ## about
 
-Setup and update a [gotosocial.org](https://gotosocial.org) on [fly.io](https://fly.io) for [fedi.cress.space](https://fedi.cress.space).
+Setup and update [gotosocial.org](https://gotosocial.org) on [fly.io](https://fly.io) for [fedi.cress.space](https://fedi.cress.space).
 
 This setup has no email support, so administration has to happen via shell (see below).
-
 
 ## bootstrap / update
 
@@ -21,7 +20,7 @@ and edit config.yaml if new. For updated version look into added settings!
 
 ## setup for fly.io
 
-create volume
+create volume to store sqlite database and attachments
 ```
 flyctl volumes create gotosocial_data --app fedi-cress-space --region fra --size 1
 ```
