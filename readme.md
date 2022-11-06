@@ -6,6 +6,8 @@ Setup and update [gotosocial.org](https://gotosocial.org) on [fly.io](https://fl
 
 This setup has no email support, so administration has to happen via shell (see below).
 
+Some context in my blog: <https://madflex.de/setup-fedi-cress-space/>
+
 ## bootstrap / update
 
 To update to a newer version edit `bootstrap.sh`.
