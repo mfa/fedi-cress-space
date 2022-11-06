@@ -2,9 +2,21 @@
 
 ## about
 
-this runs gotosocial.org on fly.io
+Setup and update a <gotosocial.org> on <fly.io> for <fedi.cress.space>.
 
-this setup has no email support, so administration has to happen via shell (see below)
+This setup has no email support, so administration has to happen via shell (see below).
+
+
+## bootstrap / update
+
+To update to a newer version edit `bootstrap.sh`.
+
+run script:
+```
+sh bootstrap.sh
+```
+
+and edit config.yaml if new. For updated version look into added settings!
 
 
 ## setup for fly.io
@@ -22,14 +34,20 @@ flyctl deploy --local-only --region fra
 ```
 
 
-## now add user(s) to the instance
+## DNS / SSL
 
-login to the instance via ssh
+Add `A` and `AAAA` records to your DNS provider.
+And a CNAME for the letsencrypt of <fly.io>, see <https://fly.io/apps/fedi-cress-space/certificates>
+
+
+## add user(s) to instance
+
+Login to the instance via ssh
 ```
 flyctl ssh console
 ```
 
-and create a superuser
+Create a superuser
 ```
 # create account
 /app/gotosocial --config-path /app/config.yaml admin account create --username some_username --email some_email@whatever.org --password 'SOME_PASSWORD'
@@ -38,3 +56,5 @@ and create a superuser
 # give super user rights to account
 /app/gotosocial --config-path /app/config.yaml admin account promote --username some_username
 ```
+
+First two steps to add "normal" users.
