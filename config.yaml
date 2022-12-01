@@ -52,7 +52,7 @@ host: "fedi.cress.space"
 # DO NOT change this after your server has already run once, or you will break things!
 # Examples: ["example.org","server.com"]
 # Default: ""
-account-domain: ""
+account-domain: "cress.space"
 
 # String. Protocol to use for the server. Only change to http for local testing!
 # This should be the protocol part of the URI that your server is actually reachable on. So even if you're
