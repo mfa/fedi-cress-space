@@ -1,7 +1,7 @@
 #!/bin/sh
 
-version=v0.5.2
-filename=gotosocial_0.5.2_linux_amd64.tar.gz
+version=v0.6.0
+filename=gotosocial_0.6.0_linux_amd64.tar.gz
 
 wget https://github.com/superseriousbusiness/gotosocial/releases/download/${version}/${filename}
 mkdir tmp
@@ -15,6 +15,7 @@ rm ${filename}
 test -e config.yaml || (cp tmp/example/config.yaml . && echo "you may want to edit the config.yaml!")
 
 # move needed files
+test -e web && mv web web.old
 mv tmp/web .
 mv tmp/gotosocial .
 
