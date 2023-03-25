@@ -37,7 +37,7 @@ flyctl deploy --local-only --region fra
 
 ## DNS / SSL
 
-Add `A` and `AAAA` records to your DNS provider.
+Add CNAME records from `your.domain` to `xxx.fly.dev` to your DNS provider.
 And a CNAME for the letsencrypt of [fly.io](https://fly.io), see <https://fly.io/apps/fedi-cress-space/certificates>
 
 
