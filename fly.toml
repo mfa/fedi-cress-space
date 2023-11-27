@@ -1,40 +1,44 @@
-# fly.toml file generated for fedi-cress-space on 2022-11-06T17:29:57+01:00
+# fly.toml app configuration file generated for fedi-cress-space on 2023-07-18T00:58:41+02:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
 
 app = "fedi-cress-space"
+primary_region = "fra"
 kill_signal = "SIGINT"
-kill_timeout = 5
-processes = []
-
-[[mounts]]
-  destination = "/data"
-  source = "gotosocial_data"
+kill_timeout = "5s"
 
 [experimental]
-  allowed_public_ports = []
   auto_rollback = true
 
+[env]
+  PRIMARY_REGION = "fra"
+
+[[mounts]]
+  source = "gotosocial_data_machines"
+  destination = "/data"
+  processes = ["app"]
+
 [[services]]
-  http_checks = []
+  protocol = "tcp"
   internal_port = 8080
   processes = ["app"]
-  protocol = "tcp"
-  script_checks = []
+
+  [[services.ports]]
+    port = 80
+    handlers = ["http"]
+    force_https = true
+
+  [[services.ports]]
+    port = 443
+    handlers = ["tls", "http"]
   [services.concurrency]
+    type = "connections"
     hard_limit = 25
     soft_limit = 20
-    type = "connections"
-
-  [[services.ports]]
-    force_https = true
-    handlers = ["http"]
-    port = 80
-
-  [[services.ports]]
-    handlers = ["tls", "http"]
-    port = 443
 
   [[services.tcp_checks]]
-    grace_period = "1s"
     interval = "15s"
-    restart_limit = 0
     timeout = "2s"
+    grace_period = "1s"
+    restart_limit = 0
