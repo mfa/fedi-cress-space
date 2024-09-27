@@ -1,7 +1,7 @@
 #!/bin/sh
 
-version=v0.14.2
-filename=gotosocial_0.14.2_linux_amd64.tar.gz
+version=v0.16.0
+filename=gotosocial_0.16.0_linux_amd64.tar.gz
 
 wget https://github.com/superseriousbusiness/gotosocial/releases/download/${version}/${filename}
 mkdir tmp
